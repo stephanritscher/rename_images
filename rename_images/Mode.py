@@ -1,3 +1,4 @@
+# TODO: Check if some parameters could be exposed as real user configuration
 PANORAMA = {
 	'command': 'rename',
 	'allow_subgroups': False,

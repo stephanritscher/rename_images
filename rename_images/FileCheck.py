@@ -8,6 +8,7 @@ from .Annotations import trace
 
 logger = logging.getLogger('FileCheck')
 
+# TODO: Split file by class into subpackage
 class Check(GObject.GObject):
 	# List of all file checks
 	_checks = collections.OrderedDict()

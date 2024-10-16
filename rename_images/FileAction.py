@@ -5,6 +5,7 @@ from .Annotations import trace
 
 logger = logging.getLogger('FileAction')
 
+# TODO: Split file by class into subpackage
 class Action(GObject.GObject):
 	# Display nicely on print
 	def __str__(self):

@@ -330,7 +330,8 @@ TAG_KEYS = ['Iptc.Application2.Keywords', 'Xmp.dc.subject']
 TIME_KEYS = ['Exif.Photo.DateTimeOriginal', 'Exif.Photo.DateTimeDigitized', 'Exif.Image.DateTime']
 TIME_FORMAT = '%Y:%m:%d %H:%M:%S'
 
-EXTENSIONS = {
+EXTENSIONS = { # TODO: Separate configuration (default choice of file check action, dateprio) from actual code
+	           # TODO: Possibly move support checks for ROTATE/GROUPCONVERT to file check plugins
 	'.jpg': {TYPE: IMAGE, STEP: RESULT, TAGS: True, ROTATE: True, GROUPCONVERT: True, DATEPRIO: 1, FileCheck.Unselected: FileAction.Include, FileCheck.Rotate: FileAction.Rotate, FileCheck.NewFileGroup: FileAction.ConvertGroup, FileCheck.CreationTime: FileAction.SetCreationTime},
 	'.cr2': {TYPE: IMAGE, STEP: RAW, TAGS: True, DATEPRIO: 2, FileCheck.OnlyRaw: FileAction.Trash, FileCheck.Unselected: FileAction.Include, FileCheck.CreationTime: FileAction.SetCreationTime},
 	'.nef': {TYPE: IMAGE, STEP: RAW, TAGS: True, DATEPRIO: 2, FileCheck.OnlyRaw: FileAction.Trash, FileCheck.Unselected: FileAction.Include, FileCheck.CreationTime: FileAction.SetCreationTime},

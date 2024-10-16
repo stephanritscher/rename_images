@@ -62,7 +62,7 @@ class Batch(GObject.GObject):
 
 	# Set properties for command to be executed
 	@trace
-	def init(self, properties, progresswindow):
+	def init(self, properties, progresswindow): # TODO: Avoid direct access to progresswindow (rather use collbacks)
 		self.reset()
 		self._allow_subgroups = properties.get('allow_subgroups', True)
 		self._tag = properties.get('tag', None)

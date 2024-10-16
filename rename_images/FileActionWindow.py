@@ -116,7 +116,7 @@ class FileActionWindow(Gtk.ApplicationWindow):
 	# Load image metadata
 	@yieldsleep
 	def load_data(self, widget):
-		try:
+		try: # FIXME: This is not interruptable/pausable. For correct implementation see button_ok_clicked
 			# Prepare the batch
 			for item in self._batch.prepare():
 				yield item
